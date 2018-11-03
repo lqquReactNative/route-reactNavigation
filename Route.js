@@ -9,5 +9,7 @@ export const Route = createStackNavigator({
     Detail: {screen: DetailScreen}
 }, {
     initialRouteName: 'Home',
+    model:'modal',
+    headerMode: 'none',
 });
 

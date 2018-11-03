@@ -2,8 +2,14 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 
 export class HomeScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Home',
+    static navigationOptions = ({navigation}) => {
+        const params = navigation.state.params || {};
+        return {
+            headerLeft: <Button
+                color={'#fff'}
+                title={'Info'}
+                onPress={() => navigation.navigate('Detail')}/>
+        }
     };
 
     render() {
