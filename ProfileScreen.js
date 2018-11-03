@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text, Button} from 'react-native';
+import {Button, Text, View} from 'react-native';
 
 export class ProfileScreen extends Component {
+
+    static navigationOptions ={
+       title: 'Profile'
+    };
 
     render() {
         return (
@@ -15,7 +19,10 @@ export class ProfileScreen extends Component {
                     title={'go to Home'}
                     onPress={() => this.props.navigation.navigate('Home')}
                 />
-                <Button title={'go to detail page '} onPress={() => this.props.navigation.navigate('Detail')}/>
+                <Button title={'go to detail page '} onPress={() => this.props.navigation.navigate('Detail',{
+                    itemId: 88,
+                    title: 'I am from Profile page'
+                })}/>
                 <Button
                     title={'Go back'}
                     onPress={() => this.props.navigation.goBack()}
